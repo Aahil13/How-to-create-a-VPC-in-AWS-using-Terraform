@@ -18,13 +18,13 @@ To use this project, follow the steps below:
 1. Clone the repository to your local machine:
 
     ```shell
-        git clone https://github.com/Aahil13/How-to-create-a-VPC-in-AWS-using-Terraform.git
+    git clone https://github.com/Aahil13/How-to-create-a-VPC-in-AWS-using-Terraform.git
     ```
 
 2. Change into the project directory:
 
     ```shell
-        cd repo-name
+    cd repo-name
     ```
 
 3. Open the `VPC.tf` file and modify the necessary values. You should also define the following variables in the `variables.tf` file:
@@ -34,13 +34,13 @@ To use this project, follow the steps below:
 4. Initialize Terraform by running the following command:
 
     ```shell
-        terraform init
+    terraform init
     ```
 
 5. Create the infrastructure on AWS by running the following command:
 
     ```shell
-        terraform apply
+    terraform apply
     ```
 
     Review the plan and type **yes** to confirm and create the resources.
@@ -54,13 +54,13 @@ To clean up and destroy the created resources when they are no longer needed, fo
 1. Change into the project directory, if you are not already there:
 
     ```shell
-        cd repo-name
+    cd repo-name
     ```
 
 2. Run the following command to destroy the resources created by Terraform:
 
     ```shell
-        terraform destroy
+    terraform destroy
     ```
 
     Review the plan and type **yes** to confirm the destruction of resources.

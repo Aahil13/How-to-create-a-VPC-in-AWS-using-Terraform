@@ -37,15 +37,3 @@ resource "aws_lb_target_group_attachment" "alb_attachment" {
   target_id        = aws_instance.demo_instance.id
   port             = 80
 }
-
-resource "aws_lb_target_group_attachment" "new_instance" {
-  target_group_arn = aws_lb_target_group.alb_tg.arn
-  target_id        = "i-05a64885e30c395c9"
-  port             = 80
-}
-
-resource "aws_lb_target_group_attachment" "new_asg" {
-  target_group_arn = aws_lb_target_group.alb_tg.arn
-  target_id        = "i-00b678b492d268f8c"
-  port             = 80
-}

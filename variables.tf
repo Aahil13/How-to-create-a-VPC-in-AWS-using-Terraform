@@ -28,12 +28,12 @@ variable "instance_type" {
 }
 
 variable "image_id" {
-  type = string
-  default = "ami-053b0d53c279acc90"
+  type    = string
+  default = "ami-022e1a32d3f742bd8"
 }
 
 variable "cidr_block" {
-  type = string
+  type    = string
   default = "0.0.0.0/0"
 }
 

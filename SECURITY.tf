@@ -6,24 +6,23 @@
 resource "aws_security_group" "ec2_sg" {
   name   = "ec2-sg"
   vpc_id = aws_vpc.demo_vpc.id
-}
 
-resource "aws_security_group_rule" "ingress_HTTP" {
-  type              = "ingress"
-  from_port         = 80
-  to_port           = 80
-  protocol          = "http"
-  security_group_id = aws_security_group.ec2_sg.id
-  cidr_blocks       = [var.cidr_block]
-}
+  ingress {
+    description = "Traffic from HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = [var.cidr_block]
+  }
 
-resource "aws_security_group_rule" "ingress_SSH" {
-  type              = "ingress"
-  from_port         = 22
-  to_port           = 22
-  protocol          = "ssh"
-  security_group_id = aws_security_group.ec2_sg.id
-  cidr_blocks       = [var.cidr_block]
+
+  egress {
+    description = "Allow traffic"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = [var.cidr_block]
+  }
 }
 
 ######################################################################################

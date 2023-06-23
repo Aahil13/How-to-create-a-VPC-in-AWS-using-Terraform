@@ -10,7 +10,9 @@ resource "aws_instance" "demo_instance" {
   key_name          = var.keypair
 
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
-  subnet_id              = aws_subnet.public_subnet_1a.id
+  subnet_id              = aws_subnet.private_subnet_1a.id
+
+  user_data_base64 = base64encode(file("apache.sh"))
 
   tags = {
     Name = "demo_instance"

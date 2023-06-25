@@ -6,7 +6,6 @@ resource "aws_launch_template" "demo_instance_auto" {
   name_prefix          = "demo_instance_auto"
   image_id             = var.image_id
   instance_type        = var.instance_type
-  security_group_names = [aws_security_group.ec2_sg.id]
 
   key_name  = var.keypair
   user_data = base64encode(file("apache.sh"))
